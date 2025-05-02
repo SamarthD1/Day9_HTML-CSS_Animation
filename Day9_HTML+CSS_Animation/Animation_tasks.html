@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 9 Tasks</title>
+        <style>
+            .box{
+                width: 100px;
+                height: 100px;
+                animation: colorChange 4s;
+                animation-duration: 10s;
+            }
+            .multi{
+                width: 100px;
+                height: 100px;
+                position: relative;
+                animation: moveColor 5s forwards;
+            }
+
+            @keyframes colorChange{
+                from{background-color: red;}
+                to{background-color: yellow;}
+            }
+
+            @keyframes moveColor {
+                0%{left: 0px; background: red;}
+                25%{left: 50px; background: orange;}
+                50%{left: 100px; background: yellow;}
+                100%{left: 200px;background: green;}
+                
+            }
+
+            .pulse {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: blue;
+                animation: pulseAnim 1s infinite alternate;
+                
+            }
+
+            @keyframes pulseAnim {
+                from { transform: scale(1); }
+                to   { transform: scale(1.2); }
+
+            }
+
+            .hover-btn:hover {
+                background-color: lightgreen;
+            }
+
+            .slideRight{
+                width: 100px;
+                height: 100px;
+                position: relative;
+                animation: slideRight 10s forwards;
+                animation-duration: 10s;
+                
+            }
+            @keyframes slideRight {
+                0%{left: 0px;background: red;}
+                25%{left: 25px;background: orange;}
+                50%{left: 50px;background: yellow;}
+                100%{left: 100px;background: greenyellow;}
+                
+            }
+
+            .delay2{
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: red;
+                animation-delay: 6s;
+                animation: delaycolor 4s ;
+                animation-duration: 10s;
+                
+            }
+
+            @keyframes delaycolor{
+                from{background-color: red;}
+                to{background-color: yellow;}
+            }
+
+            .bouncer{
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                position: relative;
+                background: yellow;
+                animation-name: bouncer;
+                animation-duration: 5s;
+                animation-iteration-count: 3;
+
+                
+            }
+            @keyframes bouncer {
+                0%{top: 0;}
+                25%{top: 100px;}
+                50%{top: 0;}
+                75%{top: 50px}
+                100%{top: 0;}
+
+                
+            }
+
+            .yoyo {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: crimson;
+                position: relative;
+
+                animation-name: slide;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate; 
+            }
+
+            @keyframes slide {
+                from {
+                    left: 0;
+                }
+                to {
+                    left: 300px;
+                }
+            }
+
+            .box {
+                width: 100px;
+                height: 40px;
+                margin: 20px 0;
+                background-color: steelblue;
+                color: white;
+                line-height: 40px;
+                text-align: center;
+                position: relative;
+                animation-name: move;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+
+            .linear {
+                animation-timing-function: linear;
+            }
+
+            .ease-in {
+                animation-timing-function: ease-in;
+            }
+
+            .ease-out {
+                animation-timing-function: ease-out;
+            }
+
+            .ease-in-out {
+                animation-timing-function: ease-in-out;
+            }
+
+            @keyframes move {
+                from {
+                    left: 0;
+                }
+                to {
+                    left: 300px;
+                }
+            }
+
+            .grow-box {
+                width: 100px;
+                height: 100px;
+                background-color: mediumseagreen;
+                animation-name: grow;
+                animation-duration: 2s;
+                animation-fill-mode: forwards; 
+                }
+
+            @keyframes grow {
+                from {
+                    transform: scale(1);
+                }
+                to {
+                    transform: scale(1.5);
+                }
+            }
+
+            .fade-in-box {
+                width: 100px;
+                height: 100px;
+                background-color: tomato;
+                animation-name: fadeIn;
+                animation-duration: 2s;
+                animation-delay: 1s;
+                animation-fill-mode: backwards; 
+                }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: scale(0.5);
+                }
+                to {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            .moving-box {
+                width: 100px;
+                height: 100px;
+                background-color: coral;
+                position: relative;
+                animation: slide 3s infinite alternate;
+                animation-play-state: running;
+                }
+
+            .moving-box:hover {
+                animation-play-state: paused; 
+            }
+
+            @keyframes slide {
+                from {
+                    left: 0;
+                }
+                to {
+                    left: 300px;
+                }
+            }
+
+            /* task9 */
+            .loader {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                align-items: end;
+                height: 100px;
+                margin-top: 50px;
+                }
+
+            .dot {
+                width: 20px;
+                height: 20px;
+                background-color: royalblue;
+                border-radius: 50%;
+                animation-name: bounce;
+                animation-duration: 0.6s;
+                animation-delay: 0s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: backwards;
+                animation-play-state: running;
+            }
+
+            .loader:hover .dot {
+                animation-play-state: paused;
+            }
+
+            .dot:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .dot:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+
+            @keyframes bounce {
+                from {
+                    transform: translateY(0);background: blue;
+                }
+                to {
+                    transform: translateY(-30px);background: #3498db;
+                }
+            }
+
+            .card {
+                position: relative;
+                width: 200px;
+                height: 100px;
+                background-color: #f3f3f3;
+                border: 2px solid #ccc;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                cursor: pointer;
+                overflow: hidden;
+            }
+
+            .card::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 4px;
+                background-color: #3498db;
+                animation: slideIn 0.4s forwards;
+                animation-play-state: paused;
+            }
+
+
+            .card:hover::after {
+                animation-play-state: running;
+            }
+
+            @keyframes slideIn {
+                from {
+                    width: 0%;
+                }
+                to {
+                    width: 100%;
+                }
+            }
+
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+
+        <h1 style="text-align: center;">CSS Animation Tasks</h1>
+        <h2>Task 1: Basic Color Animation</h2>
+        <div class="box"></div>
+        <hr>
+        <h2>Task 2: Multi-step Animation</h2>
+        <div class="multi"></div>
+        <hr>
+        <h2>Task 3: Infinite Loop Animation</h2>
+        <div class="pulse"></div>
+        <br>
+        <hr>
+        <h1>Tasks Part-2</h1>
+        <h2>Task 1: animation-name, animation-duration</h2>
+        <div class="slideRight"></div>
+        <hr>
+        <h2> Task 2: Apply animation-delay</h2>
+        <div class="delay2"></div>
+        <hr>
+        <h2>Task 3: animation-iteration-count</h2>
+        <div style="height: 200px;">
+        <div class="bouncer"></div>
+        </div>
+        <hr>
+        <h2> Task 4: Use animation-direction</h2>
+        <div class="yoyo"></div>
+        <hr>
+        <h2>Task 5: Compare animation-timing-function Options</h2>
+        <div class="box linear">linear</div>
+        <div class="box ease-in">ease-in</div>
+        <div class="box ease-out">ease-out</div>
+        <div class="box ease-in-out">ease-in-out</div>
+        <hr>
+        <h2> Task 6: Try animation-fill-mode</h2>
+        <div style="margin: 30px;">
+        <div class="grow-box"></div>
+        </div>
+        <hr>
+        <h2>Task 7: Use animation-fill-mode: backwards</h2>
+        <div style="margin: 30px;">
+        <div class="fade-in-box"></div>
+        </div>
+        <hr>
+        <h2>Task 8: Toggle animation-play-state</h2>
+        <div class="moving-box"></div>
+        <hr>
+        <h2>Task 9: Combine All Animation Properties</h2>
+        <div class="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <br>
+        <hr>
+        <h2>Task 10: Bonus – Hover-triggered Animation</h2>
+        <div class="card">Hover me</div>
+
+    </body>
+</html>
